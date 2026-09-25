@@ -1,0 +1,68 @@
+﻿@model IEnumerable<VoterRegistrationApp.Models.VoterRegistration>
+
+<h2>All Registrations</h2>
+
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>DOB</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @item.FirstName @item.LastName
+                </td>
+
+                <td>
+                    @item.DOB.ToShortDateString()
+                </td>
+
+                <td>
+                    @item.Address
+                </td>
+
+                <td>
+                    @item.City
+                </td>
+
+                <td>
+                    @item.State
+                </td>
+
+                <td>
+                    @item.Status
+                </td>
+
+                <td>
+                    <a asp-action="Edit"
+                           asp-route-id="@item.RegistrationID">
+                        Edit
+                    </a>
+
+                    |
+
+                    <a asp-action="Delete"
+                           asp-route-id="@item.RegistrationID">
+                        Delete
+                    </a>
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>

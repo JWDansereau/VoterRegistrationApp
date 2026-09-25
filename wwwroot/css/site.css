@@ -1,0 +1,771 @@
+/* =========================================
+   VOTER REGISTRATION PORTAL
+   Global Site Styling
+   ========================================= */
+
+:root {
+    --primary: #12355b;
+    --primary-dark: #0b2540;
+    --primary-light: #1f5f8b;
+    --accent: #d4a72c;
+    --accent-light: #f0d77b;
+    --background: #f4f7fa;
+    --surface: #ffffff;
+    --text: #243447;
+    --muted: #6c7a89;
+    --border: #dce3ea;
+    --success: #198754;
+    --danger: #c0392b;
+}
+
+
+/* =========================================
+   BASE
+   ========================================= */
+
+html {
+    font-size: 16px;
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+.site-navbar {
+    background: linear-gradient( 135deg, var(--primary-dark), var(--primary) );
+    min-height: 74px;
+    padding: 0;
+    box-shadow: 0 3px 14px rgba(11, 37, 64, 0.18);
+}
+
+
+/* =========================================
+   BRAND
+   ========================================= */
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: white !important;
+    text-decoration: none;
+    padding: 8px 0;
+    margin-right: 35px;
+}
+
+    .navbar-brand:hover {
+        color: white !important;
+    }
+
+
+.brand-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--primary-dark);
+    font-size: 1.25rem;
+    font-weight: 800;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+
+    .brand-text strong {
+        font-size: 1.02rem;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+    }
+
+
+    .brand-text small {
+        margin-top: 3px;
+        font-size: 0.68rem;
+        color: rgba(255, 255, 255, 0.65);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+
+/* =========================================
+   MAIN NAVIGATION
+   ========================================= */
+
+.main-nav {
+    gap: 4px;
+}
+
+
+.site-navbar .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: rgba(255, 255, 255, 0.82) !important;
+    padding: 11px 13px !important;
+    border-radius: 7px;
+    font-size: 0.92rem;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+
+    .site-navbar .nav-link:hover {
+        color: white !important;
+        background: rgba(255, 255, 255, 0.09);
+        transform: translateY(-1px);
+    }
+
+
+/* Navigation icons */
+
+.nav-icon {
+    font-size: 0.9rem;
+    color: var(--accent-light);
+    line-height: 1;
+}
+
+
+/* =========================================
+   ADMIN NAVIGATION
+   ========================================= */
+
+.admin-nav-link {
+    color: var(--accent-light) !important;
+    font-weight: 600;
+}
+
+    .admin-nav-link:hover {
+        color: white !important;
+        background: rgba(212, 167, 44, 0.14) !important;
+    }
+
+
+/* =========================================
+   ACCOUNT AREA
+   ========================================= */
+
+.account-nav {
+    gap: 6px;
+    align-items: center;
+}
+
+
+/* Logged-in user */
+
+.user-display {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 11px;
+    margin-right: 3px;
+    border-left: 1px solid rgba(255, 255, 255, 0.16);
+    color: white;
+}
+
+
+.user-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(212, 167, 44, 0.18);
+    border: 1px solid rgba(212, 167, 44, 0.55);
+    color: var(--accent-light);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+
+.user-name {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.88rem;
+    font-weight: 500;
+}
+
+
+/* =========================================
+   LOGIN
+   ========================================= */
+
+.login-link {
+    border: 1px solid rgba(212, 167, 44, 0.65);
+    color: var(--accent-light) !important;
+    padding-left: 17px !important;
+    padding-right: 17px !important;
+    font-weight: 600;
+}
+
+    .login-link:hover {
+        background: rgba(212, 167, 44, 0.12) !important;
+        border-color: var(--accent-light);
+    }
+
+
+/* =========================================
+   LOGOUT
+   ========================================= */
+
+.logout-link {
+    color: rgba(255, 255, 255, 0.72) !important;
+    font-size: 0.88rem !important;
+}
+
+    .logout-link:hover {
+        color: var(--accent-light) !important;
+    }
+
+
+/* =========================================
+   MOBILE NAVIGATION
+   ========================================= */
+
+.navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 7px 9px;
+}
+
+    .navbar-toggler:focus {
+        box-shadow: 0 0 0 0.15rem rgba(212, 167, 44, 0.25);
+    }
+
+
+@media (max-width: 991px) {
+
+    .navbar-brand {
+        margin-right: 0;
+    }
+
+    .main-nav {
+        padding-top: 12px;
+    }
+
+    .account-nav {
+        padding-bottom: 12px;
+        align-items: flex-start;
+    }
+
+    .user-display {
+        border-left: none;
+        padding-left: 13px;
+    }
+}
+
+/* =========================================
+   PAGE CONTENT
+   ========================================= */
+
+.site-content {
+    min-height: calc(100vh - 140px);
+    padding: 45px 0 60px;
+}
+
+
+/* =========================================
+   PAGE PANELS
+   ========================================= */
+
+.page-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 18px rgba(24, 50, 75, 0.07);
+}
+
+
+/* =========================================
+   HEADINGS
+   ========================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+h2 {
+    font-size: 1.55rem;
+}
+
+
+/* =========================================
+   FORMS
+   ========================================= */
+
+.form-control,
+.form-select {
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    padding: 10px 12px;
+    min-height: 44px;
+    color: var(--text);
+    background-color: white;
+}
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: var(--primary-light);
+        box-shadow: 0 0 0 0.2rem rgba(31, 95, 139, 0.15);
+    }
+
+label {
+    font-weight: 500;
+    color: var(--primary-dark);
+    margin-bottom: 6px;
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.btn {
+    border-radius: 7px;
+    font-weight: 500;
+    padding: 9px 18px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+    .btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    }
+
+.btn-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+    .btn-primary:hover {
+        background: var(--primary-dark);
+        border-color: var(--primary-dark);
+    }
+
+
+/* Gold action */
+
+.btn-gold {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+    .btn-gold:hover {
+        background: var(--accent-light);
+        border-color: var(--accent-light);
+        color: var(--primary-dark);
+    }
+
+
+/* =========================================
+   CARDS
+   ========================================= */
+
+.card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(24, 50, 75, 0.06);
+}
+
+.card-header {
+    background: var(--primary);
+    color: white;
+    border-radius: 11px 11px 0 0 !important;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   TABLES
+   ========================================= */
+
+.table {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+    .table thead th {
+        background: var(--primary);
+        color: white;
+        font-weight: 600;
+        border: none;
+    }
+
+    .table tbody tr:hover {
+        background: #f4f7fa;
+    }
+
+
+/* =========================================
+   STATUS COLORS
+   ========================================= */
+
+.status-pending {
+    color: #856404;
+    background: #fff3cd;
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-weight: 600;
+}
+
+.status-approved {
+    color: #0f5132;
+    background: #d1e7dd;
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-weight: 600;
+}
+
+.status-rejected {
+    color: #842029;
+    background: #f8d7da;
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.site-footer {
+    background: var(--primary-dark);
+    color: rgba(255, 255, 255, 0.75);
+    padding: 24px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.site-footer strong {
+    color: white;
+    display: block;
+}
+
+.site-footer span {
+    font-size: 0.85rem;
+}
+
+.footer-right {
+    font-size: 0.85rem;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 767px) {
+
+    .site-content {
+        padding-top: 25px;
+    }
+
+    .page-panel {
+        padding: 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .user-welcome {
+        padding-left: 14px;
+    }
+}
+/* =========================================
+   HOME PAGE
+   ========================================= */
+
+.home-page {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.home-hero {
+    background: linear-gradient( 135deg, rgba(11, 37, 64, 0.98), rgba(18, 53, 91, 0.96) );
+    border-radius: 16px;
+    padding: 70px 70px;
+    color: white;
+    box-shadow: 0 8px 30px rgba(24, 50, 75, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+
+    /* Decorative gold accent */
+
+    .home-hero::after {
+        content: "";
+        position: absolute;
+        width: 280px;
+        height: 280px;
+        right: -100px;
+        top: -100px;
+        border: 2px solid rgba(212, 167, 44, 0.25);
+        border-radius: 50%;
+    }
+
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+}
+
+
+.hero-badge {
+    display: inline-block;
+    color: var(--accent-light);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 14px;
+}
+
+
+.home-hero h1 {
+    color: white;
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+
+    .home-hero h1 span {
+        color: var(--accent-light);
+    }
+
+
+.hero-description {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    max-width: 650px;
+    margin-bottom: 30px;
+}
+
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+
+/* =========================================
+   HOW IT WORKS
+   ========================================= */
+
+.how-it-works {
+    padding: 60px 20px 30px;
+}
+
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+
+.section-label {
+    color: var(--primary-light);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+}
+
+
+.section-heading h2 {
+    margin-bottom: 12px;
+    font-size: 2rem;
+}
+
+
+.section-heading p {
+    color: var(--muted);
+    margin: 0;
+}
+
+
+/* =========================================
+   STEP CARDS
+   ========================================= */
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+
+.step-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 4px 15px rgba(24, 50, 75, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+    .step-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 22px rgba(24, 50, 75, 0.1);
+    }
+
+
+.step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--primary-dark);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+
+.step-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+
+.step-card p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   INFORMATION CARDS
+   ========================================= */
+
+.home-information {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    padding: 20px 20px 50px;
+}
+
+
+.information-card {
+    display: flex;
+    gap: 18px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(24, 50, 75, 0.04);
+}
+
+
+.information-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #d1e7dd;
+    color: #0f5132;
+    font-weight: 700;
+}
+
+
+.information-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+}
+
+
+.information-card p {
+    color: var(--muted);
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   HOME RESPONSIVE
+   ========================================= */
+
+@media (max-width: 767px) {
+
+    .home-hero {
+        padding: 45px 30px;
+    }
+
+        .home-hero h1 {
+            font-size: 2.2rem;
+        }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-information {
+        grid-template-columns: 1fr;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

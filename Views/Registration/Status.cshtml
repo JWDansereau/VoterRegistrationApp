@@ -1,0 +1,61 @@
+﻿@model VoterRegistrationApp.Models.VoterRegistration
+
+<h2>My Registration Status</h2>
+
+<div class="card p-4">
+
+    <h4>
+        @Model.FirstName @Model.LastName
+    </h4>
+
+    <hr />
+
+    <p>
+        <strong>Date of Birth:</strong>
+        @Model.DOB.ToShortDateString()
+    </p>
+
+    <p>
+        <strong>Address:</strong>
+        @Model.Address
+    </p>
+
+    <p>
+        <strong>City:</strong>
+        @Model.City
+    </p>
+
+    <p>
+        <strong>State:</strong>
+        @Model.State
+    </p>
+
+    <p>
+        <strong>Zip Code:</strong>
+        @Model.ZipCode
+    </p>
+
+    <p>
+        <strong>Status:</strong>
+
+        @if (Model.Status == "Approved")
+        {
+            <span class="text-success fw-bold">
+                Approved
+            </span>
+        }
+        else if (Model.Status == "Rejected")
+        {
+            <span class="text-danger fw-bold">
+                Rejected
+            </span>
+        }
+        else
+        {
+            <span class="text-warning fw-bold">
+                Pending
+            </span>
+        }
+    </p>
+
+</div>

@@ -1,0 +1,210 @@
+﻿@{
+    ViewData["Title"] = "Home";
+
+    var isLoggedIn = Context.Session.GetString("User") != null;
+    var isAdmin = Context.Session.GetString("Role") == "Admin";
+}
+
+<div class="home-page">
+
+    <!-- Hero Section -->
+    <section class="home-hero">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                SECURE ONLINE SERVICES
+            </div>
+
+            <h1>
+                Voter Registration
+                <span>Portal</span>
+            </h1>
+
+            <p class="hero-description">
+                Register to vote online and securely track the status
+                of your voter registration application.
+            </p>
+
+            <div class="hero-actions">
+
+                @if (!isLoggedIn)
+                {
+                    <a asp-controller="Account"
+                       asp-action="Login"
+                       class="btn btn-primary btn-lg">
+                        Login
+                    </a>
+
+                    <a asp-controller="Registration"
+                       asp-action="Create"
+                       class="btn btn-gold btn-lg">
+                        Register to Vote
+                    </a>
+                }
+                else if (isAdmin)
+                {
+                    <a asp-controller="Admin"
+                       asp-action="Index"
+                       class="btn btn-primary btn-lg">
+                        Admin Dashboard
+                    </a>
+                }
+                else
+                {
+                    <a asp-controller="Registration"
+                       asp-action="Create"
+                       class="btn btn-gold btn-lg">
+                        Register to Vote
+                    </a>
+
+                    <a asp-controller="Registration"
+                       asp-action="Status"
+                       class="btn btn-outline-primary btn-lg">
+                        Check Status
+                    </a>
+                }
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                HOW IT WORKS
+            </div>
+
+            <h2>
+                Register in Three Simple Steps
+            </h2>
+
+            <p>
+                Our online portal makes it easy to submit and monitor
+                your voter registration application.
+            </p>
+
+        </div>
+
+
+        <div class="steps-grid">
+
+            <!-- Step 1 -->
+            <div class="step-card">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <h3>
+                    Create an Account
+                </h3>
+
+                <p>
+                    Create a secure account with your username,
+                    email address, and password.
+                </p>
+
+            </div>
+
+
+            <!-- Step 2 -->
+            <div class="step-card">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <h3>
+                    Submit Registration
+                </h3>
+
+                <p>
+                    Provide your voter information and submit
+                    your registration application online.
+                </p>
+
+            </div>
+
+
+            <!-- Step 3 -->
+            <div class="step-card">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <h3>
+                    Track Your Status
+                </h3>
+
+                <p>
+                    Return to the portal at any time to check
+                    whether your application is pending, approved,
+                    or rejected.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Information Section -->
+    <section class="home-information">
+
+        <div class="information-card">
+
+            <div class="information-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <h3>
+                    Secure Online Registration
+                </h3>
+
+                <p>
+                    Your account information and registration
+                    details are securely stored and managed by
+                    the voter registration system.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="information-card">
+
+            <div class="information-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <h3>
+                    Application Status
+                </h3>
+
+                <p>
+                    Once your registration has been submitted,
+                    you can return to the portal to view its
+                    current status.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>

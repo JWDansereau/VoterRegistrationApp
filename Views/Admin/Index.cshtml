@@ -1,0 +1,60 @@
+﻿@model IEnumerable<VoterRegistrationApp.Models.VoterRegistration>
+
+<h2>Admin Dashboard</h2>
+
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Status</th>
+            <th>Admin Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @item.FirstName @item.LastName
+                </td>
+
+                <td>
+                    @item.City
+                </td>
+
+                <td>
+                    @item.State
+                </td>
+
+                <td>
+                    @item.Status
+                </td>
+
+                <td>
+
+                    <a class="btn btn-success"
+                           asp-action="Approve"
+                           asp-route-id="@item.RegistrationID">
+                        Approve
+                    </a>
+
+                    <a class="btn btn-danger"
+                           asp-action="Reject"
+                           asp-route-id="@item.RegistrationID">
+                        Reject
+                    </a>
+
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>
