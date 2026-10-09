@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voter Registration Web Application | CST-452</title>
+<meta name="description" content="CST-452 Senior Project II portfolio for the Voter Registration Web Application.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="hero">
+<nav class="nav wrap">
+  <strong>Voter Registration App</strong>
+  <div class="links">
+    <a href="#overview">Overview</a><a href="#features">Features</a><a href="#architecture">Architecture</a>
+    <a href="#testing">Testing</a><a href="#challenges">Challenges</a><a href="#run">Run</a>
+  </div>
+</nav>
+<div class="hero-content wrap">
+  <p class="eyebrow">CST-452 • Senior Project II</p>
+  <h1>Voter Registration Web Application</h1>
+  <p>A database-backed ASP.NET Core MVC application for online voter registration, status tracking, and administrative review.</p>
+  <div class="actions">
+    <a class="button primary" href="https://github.com/JWDansereau/VoterRegistrationApp">View Source on GitHub</a>
+    <a class="button secondary" href="#features">Explore the Project</a>
+  </div>
+</div>
+</header>
+
+<section id="overview" class="section wrap">
+<p class="eyebrow">01 • Project Overview</p>
+<h2>From requirements to a working application</h2>
+<div class="columns">
+<div>
+<p>The Voter Registration Web Application was developed as the Senior Project II capstone project. It provides a web-based workflow for creating user accounts, submitting voter registration information, checking registration status, and allowing administrators to review registrations.</p>
+<p>The project was developed iteratively with ASP.NET Core MVC, C#, .NET 10, Entity Framework Core, SQL Server LocalDB, Bootstrap, Visual Studio, and Git/GitHub.</p>
+</div>
+<div class="card accent"><h3>Project Goal</h3><p>Demonstrate practical software-development skills through a complete MVC application including database persistence, authentication, role-based access, CRUD operations, testing, documentation, and source control.</p></div>
+</div>
+</section>
+
+<section id="features" class="section shaded">
+<div class="wrap"><p class="eyebrow">02 • Key Functionality</p><h2>What the application can do</h2>
+<div class="grid three">
+<article class="card"><b>01</b><h3>Account Management</h3><p>Users can register accounts, log in, and log out.</p></article>
+<article class="card"><b>02</b><h3>Voter Registration</h3><p>Users can submit voter information including name, address, date of birth, state, and ZIP code.</p></article>
+<article class="card"><b>03</b><h3>Status Tracking</h3><p>Logged-in users can view their registration status.</p></article>
+<article class="card"><b>04</b><h3>Administrative Review</h3><p>Administrators can review registrations and approve or reject submissions.</p></article>
+<article class="card"><b>05</b><h3>Role-Based Access</h3><p>Session values control role-aware navigation and administrative access.</p></article>
+<article class="card"><b>06</b><h3>Database Persistence</h3><p>Entity Framework Core persists users and registrations in SQL Server LocalDB.</p></article>
+</div></div>
+</section>
+
+<section class="section wrap">
+<p class="eyebrow">03 • Technology Stack</p><h2>Tools and technologies</h2>
+<div class="tags">
+<span>C#</span><span>.NET 10</span><span>ASP.NET Core MVC</span><span>Entity Framework Core</span>
+<span>SQL Server LocalDB</span><span>Bootstrap</span><span>HTML/CSS</span><span>Visual Studio</span><span>Git/GitHub</span>
+</div>
+</section>
+
+<section id="architecture" class="section shaded">
+<div class="wrap"><p class="eyebrow">04 • Architecture & Design</p><h2>MVC application architecture</h2>
+<div class="columns">
+<div class="card"><h3>Application Structure</h3>
+<ul><li><strong>Controllers:</strong> handle requests and application workflows.</li><li><strong>Models:</strong> represent users, registrations, database context, and errors.</li><li><strong>Views:</strong> provide the Razor-based user interface.</li><li><strong>Entity Framework Core:</strong> provides database access and migrations.</li><li><strong>Session state:</strong> supports custom authentication and role checks.</li></ul></div>
+<div class="card"><h3>Database Design</h3><p>The application uses Users and VoterRegistrations data sets. Registration records are associated with users through UserID, allowing the status workflow to identify the logged-in user's registration.</p></div>
+</div>
+<div class="note"><strong>Supporting design artifacts:</strong> The final CST-452 Architecture and Design document contains the project's architecture, ER/database, UML, UI, sequence, and application-flow diagrams.</div>
+</div>
+</section>
+
+<section id="testing" class="section wrap">
+<p class="eyebrow">05 • Verification</p><h2>Testing and traceability</h2>
+<div class="metrics"><div><strong>11</strong><span>Test Cases</span></div><div><strong>11</strong><span>Passed</span></div><div><strong>100%</strong><span>Pass Rate</span></div></div>
+<div class="card"><h3>Iterative debugging example</h3><p>TC-010 initially exposed an issue in the registration Edit view caused by an invalid <code>RenderBody()</code> invocation. The view was corrected and the test was successfully retested. This demonstrates the value of executing tests and verifying fixes.</p></div>
+</section>
+
+<section id="challenges" class="section shaded">
+<div class="wrap"><p class="eyebrow">06 • Challenges & Lessons Learned</p><h2>What the project taught me</h2>
+<div class="grid two">
+<div class="card"><h3>Database Integration</h3><p>Configured Entity Framework Core and LocalDB, created migrations, and verified persistence.</p></div>
+<div class="card"><h3>Authentication & Roles</h3><p>Implemented session-based authentication and role-aware navigation and administrative access.</p></div>
+<div class="card"><h3>Debugging</h3><p>Used testing feedback to identify, correct, and retest application defects.</p></div>
+<div class="card"><h3>Source Control</h3><p>Used Git and GitHub to manage source code and maintain the final repository.</p></div>
+</div>
+<div class="card accent"><h3>Professional & Christian Worldview</h3><p>The project reinforced integrity, responsibility, and perseverance in software development. When testing revealed a defect, I documented it, corrected it, and verified the fix rather than simply treating the requirement as complete.</p></div>
+</div>
+</section>
+
+<section id="run" class="section wrap">
+<p class="eyebrow">07 • Run the Project</p><h2>Getting the application running</h2>
+<div class="card"><ol><li>Clone or download the VoterRegistrationApp repository.</li><li>Open the solution in Visual Studio.</li><li>Restore NuGet packages.</li><li>Ensure SQL Server LocalDB is available.</li><li>Run <code>Update-Database</code> if the local database has not been created.</li><li>Run the application from Visual Studio.</li></ol>
+<a class="button primary" href="https://github.com/JWDansereau/VoterRegistrationApp">Open GitHub Repository</a></div>
+</section>
+
+<section class="section shaded">
+<div class="wrap"><p class="eyebrow">08 • Supporting Artifacts</p><h2>Project documentation</h2>
+<div class="grid four">
+<div class="card"><h3>Project Proposal</h3><p>Final CST-452 proposal describing project scope and development approach.</p></div>
+<div class="card"><h3>Requirements</h3><p>Final requirements and outcomes for the completed application.</p></div>
+<div class="card"><h3>Architecture</h3><p>Final architecture, database, UML, UI, and sequence design artifacts.</p></div>
+<div class="card"><h3>Testing</h3><p>Final test plan, 11 test cases, results, and traceability matrix.</p></div>
+</div></div>
+</section>
+
+<footer><div class="wrap footer"><div><strong>Voter Registration Web Application</strong><p>CST-452 • Senior Project II</p></div><a href="https://github.com/JWDansereau/VoterRegistrationApp">GitHub Repository →</a></div></footer>
+</body>
+</html>
